@@ -14,6 +14,10 @@ correo: string = 'coralirodriguez@gmail.com';
 
   constructor() { }
 
+  guardarNombre(){
+    console.log('Nombre guardado', this.nombre);
+  }
+
   ngOnInit() {
   }
 
