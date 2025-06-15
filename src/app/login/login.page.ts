@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,18 +8,16 @@ import { Router } from '@angular/router';
   standalone: false,
 })
 export class LoginPage {
-  loginForm: FormGroup;
+  loginForm = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required]
+  });
 
-  constructor(private fb: FormBuilder, private router: Router) {
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
-    });
-  }
+  constructor(private fb: FormBuilder) {}
 
-  iniciarSesion() {
+  login() {
     if (this.loginForm.valid) {
-      this.router.navigate(['/home']); // Redirige si es válido
+      alert('Inicio de sesión exitoso!');
     } else {
       alert('Completa todos los campos correctamente.');
     }
