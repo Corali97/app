@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
 import { IonicModule } from '@ionic/angular';
 
-import { MovimientoPageRoutingModule } from './movimiento-routing.module';
-import { MovimientoPage } from './movimiento.page';
+import { MetaPageRoutingModule } from './meta-routing.module';
+
+import { MetaPage } from './meta.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MovimientoPageRoutingModule
+    MetaPageRoutingModule
   ],
-  declarations: [MovimientoPage]
+  declarations: [MetaPage]
 })
-export class MovimientoPageModule {}
+export class MetaPageModule {}
