@@ -1,9 +1,16 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Meta</ion-title>
+  <ion-toolbar color="success">
+    <ion-title>Metas</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content class="ion-padding">
-  <p>Página Meta</p>
+  <ion-list>
+    <ion-item *ngFor="let meta of metas">
+      <ion-label>
+        <h2>{{ meta.nombre }}</h2>
+        <p>Meta: {{ meta.objetivo | currency:'CLP' }}</p>
+        <p>Actual: {{ meta.actual | currency:'CLP' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

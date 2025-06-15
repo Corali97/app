@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class MovimientoPage {
-  constructor() {}
+  categorias = ['Comida', 'Transporte', 'Educación'];
+  fecha = new Date().toISOString();
+  ahorroActivo = false;
+  movimientos = [
+    { tipo: 'Ingreso', monto: 50000, fecha: '2025-06-01' },
+    { tipo: 'Gasto', monto: -15000, fecha: '2025-06-05' }
+  ];
 }
