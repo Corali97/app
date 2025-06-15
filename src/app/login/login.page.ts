@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
+nombre: string = 'Corali Rodriguez';
+intereses: string [] = ['Programación', 'Diseño','Viajes'];
+
   constructor() { }
 
   ngOnInit() {
