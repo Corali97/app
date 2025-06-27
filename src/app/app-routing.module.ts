@@ -1,13 +1,37 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule) },
-  { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomePageModule) },
-  { path: 'movimiento', loadChildren: () => import('./movimiento/movimiento.module').then(m => m.MovimientoPageModule) },
-  { path: 'historial', loadChildren: () => import('./historial/historial.module').then(m => m.HistorialPageModule) },
-  { path: 'meta', loadChildren: () => import('./meta/meta.module').then(m => m.MetaPageModule) }
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'movimiento',
+    loadChildren: () => import('./movimiento/movimiento.module').then(m => m.MovimientoPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'meta',
+    loadChildren: () => import('./meta/meta.module').then(m => m.MetaPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'historial',
+    loadChildren: () => import('./historial/historial.module').then(m => m.HistorialPageModule),
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({

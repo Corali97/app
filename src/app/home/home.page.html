@@ -1,8 +1,12 @@
 <ion-header>
   <ion-toolbar color="tertiary">
     <ion-title>Inicio</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">Cerrar sesión</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
 <ion-content class="ion-padding">
   <ion-card>
     <ion-card-header>
@@ -12,6 +16,7 @@
       Administra tus finanzas personales fácilmente.
     </ion-card-content>
   </ion-card>
+
   <ion-button expand="block" routerLink="/movimiento">Ir a Movimientos</ion-button>
   <ion-button expand="block" routerLink="/historial">Ver Historial</ion-button>
   <ion-button expand="block" routerLink="/meta">Metas de Ahorro</ion-button>
