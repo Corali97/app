@@ -4,6 +4,12 @@ import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
+  path: 'api',
+  loadChildren: () => import('./pages/api/api.module').then(m => m.ApiPageModule),
+  canActivate: [AuthGuard]
+}
+
+  {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
@@ -31,6 +37,10 @@ const routes: Routes = [
     path: 'historial',
     loadChildren: () => import('./historial/historial.module').then(m => m.HistorialPageModule),
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'api',
+    loadChildren: () => import('./pages/api/api.module').then( m => m.ApiPageModule)
   }
 ];
 

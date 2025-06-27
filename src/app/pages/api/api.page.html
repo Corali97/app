@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Categorías de Comida</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let cat of categorias">
+      <ion-thumbnail slot="start">
+        <img [src]="cat.strCategoryThumb">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ cat.strCategory }}</h2>
+        <p>{{ cat.strCategoryDescription | slice:0:80 }}...</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
