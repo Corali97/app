@@ -7,7 +7,7 @@ const routes: Routes = [
   path: 'api',
   loadChildren: () => import('./pages/api/api.module').then(m => m.ApiPageModule),
   canActivate: [AuthGuard]
-}
+  },
 
   {
     path: '',
