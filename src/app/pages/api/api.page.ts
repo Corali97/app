@@ -5,6 +5,7 @@ import { ApiService } from 'src/app/services/api.service';
   selector: 'app-api',
   templateUrl: './api.page.html',
   styleUrls: ['./api.page.scss'],
+  standalone: false,
 })
 export class ApiPage implements OnInit {
   categorias: any[] = [];
