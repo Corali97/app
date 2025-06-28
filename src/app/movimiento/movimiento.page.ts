@@ -22,10 +22,19 @@ export class MovimientoPage implements OnInit {
     });
   }
 
-  async ngOnInit() {
+async ngOnInit() {
+  try {
+    console.log('Inicializando almacenamiento...');
     await this.storage.create();
-    this.movimientos = (await this.storage.get('movimientos')) || [];
+    const data = await this.storage.get('movimientos');
+    this.movimientos = Array.isArray(data) ? data : [];
+    console.log('Movimientos cargados:', this.movimientos);
+  } catch (err) {
+    console.error('Error al inicializar almacenamiento:', err);
+    this.movimientos = [];
   }
+}
+
 
   async guardarMovimiento() {
     if (this.movimientoForm.valid) {
