@@ -49,7 +49,7 @@ export class MovimientoPage implements OnInit {
   async obtenerUbicacion() {
     try {
       const position = await Geolocation.getCurrentPosition();
-      const coords = `Lat: ${position.coords.latitude}, Lon: ${position.coords.longitude}`;
+      const coords = `lat: ${position.coords.latitude}, lon: ${position.coords.longitude}`;
       this.movimientoForm.patchValue({ ubicacion: coords });
       alert('Ubicación guardada correctamente');
     } catch (err) {
